@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "f79bf251-aec9-4139-b8b8-58534b15e55a",
+		"name": "Spring WS Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24311124"
+	},
+	"item": [
+		{
+			"name": "getStudents",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:stud=\"http://example.com/students\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <stud:GetStudentRequest>\r\n         <name>John</name>\r\n      </stud:GetStudentRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ws/students.wsdl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws",
+						"students.wsdl"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "request1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:stud=\"http://example.com/students\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <stud:GetStudentRequest>\r\n         <name>John</name>\r\n      </stud:GetStudentRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ws/students.wsdl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ws",
+								"students.wsdl"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Accept",
+							"value": "text/xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2"
+						},
+						{
+							"key": "SOAPAction",
+							"value": "\"\""
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/xml;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "316"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Apr 2025 08:24:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <SOAP-ENV:Header/>\n    <SOAP-ENV:Body>\n        <ns3:GetStudentReponse xmlns:ns3=\"http://example.com/students\">\n            <student>\n                <age>22</age>\n                <course>Computer Science</course>\n                <name>John</name>\n            </student>\n        </ns3:GetStudentReponse>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>"
+				}
+			]
+		}
+	]
+}
